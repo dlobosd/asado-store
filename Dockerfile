@@ -1,17 +1,18 @@
 # 1. Fase de Construcción (Build Phase)
-# Usar una imagen base de Maven para construir el proyecto.
-FROM maven:3.8.6-openjdk-17-slim AS build
+# Usar una imagen base de Maven que incluye Java 17.
+FROM maven:3.9.5-eclipse-temurin-17 AS build
 
 # Copiar el pom.xml y el código fuente.
 COPY pom.xml .
 COPY src ./src
 
 # Construir la aplicación Spring Boot (esto genera el archivo .jar)
+# Usamos -DskipTests para ir más rápido, ya que no tienes tests.
 RUN mvn clean package -DskipTests
 
 # 2. Fase de Ejecución (Run Phase)
-# Usar una imagen base más ligera (solo Java) para ejecutar el JAR.
-FROM openjdk:17-jdk-slim
+# Usar una imagen base solo de Java 17 (más ligera) para ejecutar el JAR.
+FROM eclipse-temurin:17-jre-alpine
 
 # Exponer el puerto 8080 (el puerto por defecto de Spring Boot)
 EXPOSE 8080
