@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar Carrito - HU #15</title>
+    <style>
+        /* Estilos CSS Básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-principal {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        /* ---------------------------------------------------- */
+        /* SECCIÓN NUEVA: Botón de Guardar (Cumple HU #15)      */
+        /* ---------------------------------------------------- */
+        .acciones-carrito {
+            display: flex;
+            justify-content: flex-end; /* Alinear a la derecha */
+            margin-bottom: 30px;
+            gap: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .boton-guardar {
+            background-color: #f39c12; /* Naranja para "Guardar" o "Más Tarde" */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.0em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* Añadido para convertir el botón en un enlace funcional */
+            display: inline-block;
+        }
+        
+        .boton-guardar:hover {
+            background-color: #e67e22;
+        }
+
+        /* ---------------------------------------------------- */
+        /* SECCIÓN NUEVA: Carritos Guardados (Complemento HU #15) */
+        /* ---------------------------------------------------- */
+        .lista-guardados {
+            list-style: none;
+            padding: 0;
+        }
+
+        .carrito-guardado-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .carrito-info {
+            font-size: 0.95em;
+        }
+
+        .boton-retomar {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+
+        /* Espacio para la tabla del carrito (tomado de la HU #10) */
+        .tabla-productos {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tabla-productos th, .tabla-productos td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1200px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+    
+    <div class="contenedor-principal">
+        <h1>Tu Carrito Actual</h1>
+
+        <table class="tabla-productos">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Parrilla Urbana</td><td>$ 120.000</td><td>1</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="acciones-carrito">
+            <a href="/carrito" class="boton-guardar">💾 Guardar para más tarde</a>
+        </div>
+
+        <h2>Carritos Guardados</h2>
+        <ul class="lista-guardados">
+            <li class="carrito-guardado-item">
+                <div class="carrito-info">
+                    <strong>Carrito de la semana pasada</strong><br>
+                    <small>Guardado el 30/09/2025 | 3 productos | Total: $ 350.500</small>
+                </div>
+                <a href="/carrito" class="boton-retomar">Retomar</a>
+            </li>
+
+            <li class="carrito-guardado-item">
+                <div class="carrito-info">
+                    <strong>Ideas de regalo</strong><br>
+                    <small>Guardado el 25/09/2025 | 1 producto | Total: $ 45.990</small>
+                </div>
+                <a href="/carrito" class="boton-retomar">Retomar</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

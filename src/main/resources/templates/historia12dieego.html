@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promociones y Descuentos - HU #18</title>
+    <style>
+        /* Estilos CSS Básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-principal {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* ---------------------------------------------------- */
+        /* SECCIÓN NUEVA: Panel de Promociones (Cumple HU #18)  */
+        /* ---------------------------------------------------- */
+        .panel-promociones {
+            margin-bottom: 40px;
+            padding: 25px 40px;
+            background: linear-gradient(90deg, #ff6b6b 0%, #ee5253 100%); /* Fondo rojo/naranja llamativo */
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+            text-align: center;
+        }
+
+        .panel-promociones h2 {
+            font-size: 2.2em;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .panel-promociones p {
+            font-size: 1.2em;
+            margin: 0 0 15px 0;
+        }
+
+        .boton-oferta {
+            display: inline-block;
+            background-color: white;
+            color: #ff6b6b;
+            padding: 10px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .boton-oferta:hover {
+            background-color: #eee;
+        }
+        
+        /* ---------------------------------------------------- */
+        /* LISTADO DE PRODUCTOS EN OFERTA (Complemento visual)  */
+        /* ---------------------------------------------------- */
+        .grid-ofertas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .oferta-card {
+            background-color: white;
+            border: 2px solid #ff6b6b;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .descuento-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #2ecc71;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 0 8px 0 8px;
+            font-weight: bold;
+        }
+
+        .precio-original {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .precio-oferta {
+            color: #ff6b6b;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1200px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+    <div class="contenedor-principal">
+        <h1>Página de Ofertas Especiales</h1>
+
+        <div class="panel-promociones">
+            <h2>¡20% de Descuento en Toda la Línea Deluxe!</h2>
+            <p>Aprovecha ofertas relevantes solo por esta semana. Codigo: ASADO20</p>
+            <a href="/catalogo" class="boton-oferta">Ver Ofertas Ahora</a>
+        </div>
+
+        <h2 id="productos-oferta">Productos en Promoción</h2>
+        
+        <div class="grid-ofertas">
+            
+            <div class="oferta-card">
+                <span class="descuento-tag">-15%</span>
+                <img src="placeholder_promo_1.jpg" alt="Parrilla Deluxe" style="width:100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;">
+                <p style="font-weight: bold;">Parrilla de Lujo 'El Jefe'</p>
+                <p class="precio-original">$ 450.000</p>
+                <p class="precio-oferta">$ 382.500</p>
+            </div>
+
+            <div class="oferta-card">
+                <span class="descuento-tag">-25%</span>
+                <img src="placeholder_promo_2.jpg" alt="Kit Carbón" style="width:100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;">
+                <p style="font-weight: bold;">Kit de Carbón Premium (5 und.)</p>
+                <p class="precio-original">$ 35.000</p>
+                <p class="precio-oferta">$ 26.250</p>
+            </div>
+            
+            </div>
+    </div>
+</body>
+</html>

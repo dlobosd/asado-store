@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - HU #19</title>
+    <style>
+        /* Estilos CSS Básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-perfil {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            color: #007bff;
+        }
+
+        /* Estilos del Formulario */
+        .formulario-perfil label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .formulario-perfil input,
+        .formulario-perfil select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .grupo-inline {
+            display: flex;
+            gap: 20px;
+        }
+
+        .grupo-inline > div {
+            flex: 1;
+        }
+
+        .boton-guardar {
+            width: 100%;
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-guardar:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1200px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+    <div class="contenedor-perfil">
+        <h1>Mi Perfil</h1>
+
+        <form action="/api/update-profile" method="POST" class="formulario-perfil">
+            
+            <h2>Datos de Contacto</h2>
+            <div class="grupo-inline">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="Diego" required>
+                </div>
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" value="Lobos" required>
+                </div>
+            </div>
+            
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" value="diego.lobos@mail.com" disabled> 
+            
+            <label for="telefono">Teléfono de Contacto</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" value="+56 9 1234 5678" required>
+
+            <h2>Dirección Principal de Entrega</h2>
+            
+            <label for="calle">Calle y Número</label>
+            <input type="text" id="calle" name="calle" placeholder="Av. Las Condes 1234" value="Av. Las Condes 1234" required>
+            
+            <label for="referencia">Referencia/Departamento (opcional)</label>
+            <input type="text" id="referencia" name="referencia" placeholder="Departamento B-501">
+            
+            <div class="grupo-inline">
+                <div>
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" value="Santiago" required>
+                </div>
+                <div>
+                    <label for="region">Región/Estado</label>
+                    <select id="region" name="region" required>
+                        <option value="RM" selected>Región Metropolitana</option>
+                        <option value="V">Valparaíso</option>
+                        </select>
+                </div>
+            </div>
+
+            <button type="submit" class="boton-guardar">Guardar Cambios</button>
+        </form>
+    </div>
+</body>
+</html>

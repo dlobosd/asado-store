@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente - HU #6</title>
+    <style>
+        /* Estilos CSS básicos para el formulario */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column; /* Cambiado para acomodar el nav */
+            justify-content: flex-start; /* Empezar desde arriba */
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 20px;
+        }
+
+        .contenedor-registro {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p.mensaje-cuenta {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        p.mensaje-cuenta a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1200px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+    <div class="contenedor-registro">
+        <h2>Crear Cuenta Personalizada</h2>
+        <form action="/api/register" method="POST">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@dominio.com" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required minlength="8">
+            
+            <label for="confirm-password">Confirmar Contraseña:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Repite tu contraseña" required minlength="8">
+
+            <button type="submit">Registrarme</button>
+        </form>
+        <p class="mensaje-cuenta">
+            ¿Ya tienes una cuenta? <a href="/login">Iniciar Sesión</a>
+        </p>
+    </div>
+</body>
+</html>

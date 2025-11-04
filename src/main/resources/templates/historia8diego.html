@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Destacados - HU #14</title>
+    <style>
+        /* Estilos CSS Básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-principal {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* ---------------------------------------------------- */
+        /* SECCIÓN NUEVA: Productos Destacados (Cumple HU #14)  */
+        /* ---------------------------------------------------- */
+        .seccion-destacados {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff0f5; /* Fondo suave para destacarse */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #d81b60; /* Color llamativo para lo "mejor" */
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .lista-destacados {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .destacado-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .destacado-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .destacado-card img {
+            width: 100%;
+            max-height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .nombre-destacado {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .precio-destacado {
+            color: #e74c3c;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        /* ---------------------------------------------------- */
+        /* SECCIÓN DE CATÁLOGO NORMAL (Para demostrar dónde va)  */
+        /* ---------------------------------------------------- */
+        .catalogo-productos {
+            border-top: 2px dashed #ccc;
+            padding-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .producto-card {
+            /* Mismo estilo de tu HU #9 */
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1200px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+    <div class="contenedor-principal">
+        <h1>Catálogo de Productos</h1>
+
+        <div class="seccion-destacados">
+            <h2>🔥 Mejores Opciones Destacadas (VIEW) 🔥</h2>
+            <div class="lista-destacados">
+                
+                <div class="destacado-card">
+                    <img src="placeholder_destacado_1.jpg" alt="Parrilla Oferta" class="imagen-destacado">
+                    <div class="nombre-destacado">Parrilla Acero Inox 1000</div>
+                    <div class="precio-destacado">$ 250.000</div>
+                    <small style="color:red;">¡Oferta 24h!</small>
+                </div>
+
+                <div class="destacado-card">
+                    <img src="placeholder_destacado_2.jpg" alt="Kit de Cuchillos" class="imagen-destacado">
+                    <div class="nombre-destacado">Kit de Asado Profesional</div>
+                    <div class="precio-destacado">$ 85.990</div>
+                    <small style="color:gold;">⭐⭐⭐⭐⭐</small>
+                </div>
+
+                <div class="destacado-card">
+                    <img src="placeholder_destacado_3.jpg" alt="Guantes" class="imagen-destacado">
+                    <div class="nombre-destacado">Guantes Térmicos Pro</div>
+                    <div class="precio-destacado">$ 29.500</div>
+                    <small style="color:green;">¡Nuevo!</small>
+                </div>
+
+            </div>
+        </div>
+        <h2>Todos los Productos</h2>
+        <div class="catalogo-productos">
+            <div class="producto-card">... Producto normal 1 ...</div>
+            <div class="producto-card">... Producto normal 2 ...</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - HU #7</title>
+    <style>
+        /* Estilos CSS básicos */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column; /* Cambiado para acomodar el nav */
+            justify-content: flex-start; /* Empezar desde arriba */
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 20px; /* Añadir espacio arriba del contenedor */
+        }
+
+        .contenedor-login {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            margin-top: 20px; /* Espacio debajo del nav */
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* Estilo para el botón de Google */
+        .boton-google {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #4285F4; /* Color de Google */
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .boton-google:hover {
+            background-color: #357ae8;
+        }
+
+        .icono-google {
+            font-weight: bold;
+            margin-right: 10px;
+            padding: 4px 8px;
+            background-color: white;
+            color: #4285F4;
+            border-radius: 2px;
+        }
+
+        .separador {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #aaa;
+            margin: 20px 0;
+        }
+
+        .separador::before,
+        .separador::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: #eee;
+            margin: 0 10px;
+        }
+
+        /* Estilos para el formulario tradicional (opcional) */
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .boton-login-tradicional {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .boton-login-tradicional:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1000px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+
+    <div class="contenedor-login">
+        <h2>Iniciar Sesión</h2>
+
+        <a href="#" class="boton-google" role="button">
+            <span class="icono-google">G</span>
+            Continuar con Google
+        </a>
+
+        <div class="separador">o</div>
+
+        <form action="#" method="POST"> 
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit" class="boton-login-tradicional">Iniciar Sesión</button>
+        </form>
+
+        <p style="margin-top: 20px; font-size: 14px;">
+            ¿No tienes cuenta? <a href="/registro">Regístrate aquí</a> 
+        </p>
+    </div>
+</body>
+</html>

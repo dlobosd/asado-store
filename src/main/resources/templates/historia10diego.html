@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelación de Pedido - HU #16</title>
+    <style>
+        /* Estilos CSS Básicos (Similares a HU #11) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-pedidos {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Tabla de Pedidos */
+        .tabla-pedidos {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tabla-pedidos th, .tabla-pedidos td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .tabla-pedidos th {
+            background-color: #f4f4f4;
+            color: #555;
+            font-weight: bold;
+        }
+
+        /* Botones de Acción */
+        .grupo-acciones {
+            display: flex;
+            gap: 8px;
+        }
+
+        .boton-detalle {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+
+        /* ---------------------------------------------------- */
+        /* BOTÓN CRÍTICO DE CANCELAR (Cumple la HU #16)         */
+        /* ---------------------------------------------------- */
+        .boton-cancelar {
+            background-color: #e74c3c; /* Color de peligro/cancelación */
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-cancelar:hover {
+            background-color: #c0392b;
+        }
+
+        /* Estilos de Estado (de HU #11) */
+        .estado {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .estado.pendiente {
+            background-color: #f39c12; /* Naranja/Amarillo: Cancelable */
+            color: #333;
+        }
+        .estado.en-ruta {
+            background-color: #007bff; /* Azul: NO Cancelable */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1200px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+
+    <div class="contenedor-pedidos">
+        <h1>Gestión de Pedidos</h1>
+
+        <table class="tabla-pedidos">
+            <thead>
+                <tr>
+                    <th># Pedido</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>#20251006-003</td>
+                    <td>06/10/2025</td>
+                    <td>$ 45.990</td>
+                    <td><span class="estado pendiente">Pendiente de Envío</span></td>
+                    <td>
+                        <div class="grupo-acciones">
+                            <a href="#" class="boton-detalle">Ver Detalle</a>
+                            <button class="boton-cancelar" onclick="alert('¿Seguro que quieres cancelar el pedido #20251006-003?');">Cancelar</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>#20251006-002</td>
+                    <td>06/10/2025</td>
+                    <td>$ 120.000</td>
+                    <td><span class="estado en-ruta">En Ruta</span></td>
+                    <td>
+                        <div class="grupo-acciones">
+                            <a href="#" class="boton-detalle">Seguimiento</a>
+                            </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

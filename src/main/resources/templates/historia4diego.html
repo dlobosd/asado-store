@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - HU #10</title>
+    <style>
+        /* Estilos CSS Básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-carrito {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos de la tabla de productos (para ver y modificar) */
+        .tabla-productos {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .tabla-productos th, .tabla-productos td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tabla-productos th {
+            background-color: #f4f4f4;
+            color: #555;
+            font-weight: bold;
+        }
+
+        /* Controles de Cantidad (Modificar fácilmente) */
+        .control-cantidad {
+            display: flex;
+            align-items: center;
+        }
+
+        .control-cantidad input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        
+        .control-cantidad button {
+            background-color: #ccc;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .producto-nombre {
+            font-weight: bold;
+        }
+        
+        /* Resumen de Totales (Ver el total) */
+        .resumen-total {
+            border-top: 2px solid #333;
+            padding-top: 20px;
+            text-align: right;
+        }
+
+        .resumen-total p {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+
+        .total-final {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .boton-checkout {
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none; /* Asegurar que el botón se vea como un botón, aunque sea un enlace */
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1200px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+
+    <div class="contenedor-carrito">
+        <h1>Tu Carrito de Compras</h1>
+
+        <table class="tabla-productos">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="producto-nombre">Parrilla Compacta Urbana</span>
+                    </td>
+                    <td>$ 120.000</td>
+                    <td>
+                        <div class="control-cantidad">
+                            <button>-</button>
+                            <input type="number" value="1" min="1" max="99">
+                            <button>+</button>
+                        </div>
+                    </td>
+                    <td>$ 120.000</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="producto-nombre">Set de Accesorios Premium</span>
+                    </td>
+                    <td>$ 45.990</td>
+                    <td>
+                        <div class="control-cantidad">
+                            <button>-</button>
+                            <input type="number" value="2" min="1" max="99">
+                            <button>+</button>
+                        </div>
+                    </td>
+                    <td>$ 91.980</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="resumen-total">
+            <p>Subtotal: $ 211.980</p>
+            <p>Envío: $ 5.000</p>
+            <p class="total-final">Total a Pagar: $ 216.980</p>
+            
+            <a href="/pagar" class="boton-checkout">Proceder al Pago</a>
+        </div>
+    </div>
+</body>
+</html>

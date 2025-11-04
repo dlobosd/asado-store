@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones - HU #13</title>
+    <style>
+        /* Estilos CSS Básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-notificaciones {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Buzón de Notificaciones (Visualización) */
+        .buzon-lista {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .notificacion-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #007bff; /* Color de énfasis */
+            background-color: #f9f9ff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .notificacion-item.leida {
+            opacity: 0.7;
+            border-left: 5px solid #ccc;
+            background-color: #fdfdff;
+        }
+
+        .notificacion-fecha {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* Configuración de Notificaciones (Gestión) */
+        .seccion-config {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .preferencia-grupo {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .preferencia-grupo:last-child {
+            border-bottom: none;
+        }
+
+        .preferencia-grupo label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+
+        .preferencia-grupo input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .boton-guardar {
+            display: block;
+            width: 200px;
+            margin: 20px auto 0;
+            padding: 10px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 15px; background-color: #333; margin-bottom: 20px; width: 100%;">
+        <div style="max-width: 1200px; margin: auto;">
+            <a href="/catalogo" style="color: white; margin-right: 15px; text-decoration: none;">🛒 Catálogo</a>
+            <a href="/carrito" style="color: white; margin-right: 15px; text-decoration: none;">🛍️ Carrito</a>
+            <a href="/pedidos" style="color: white; margin-right: 15px; text-decoration: none;">📦 Mis Pedidos</a>
+            <a href="/perfil" style="color: white; margin-right: 15px; text-decoration: none;">👤 Mi Perfil</a>
+            <a href="/login" style="color: white; margin-right: 15px; text-decoration: none;">🔑 Iniciar Sesión</a> 
+        </div>
+    </nav>
+
+    <div class="contenedor-notificaciones">
+        <h1>Centro de Notificaciones</h1>
+
+        <h2>Notificaciones Recientes</h2>
+        <ul class="buzon-lista">
+            <li class="notificacion-item">
+                <div>
+                    <strong>¡Tu pedido ha sido enviado!</strong> El pedido #20251006-002 ya está en ruta.
+                </div>
+                <span class="notificacion-fecha">Hace 5 minutos</span>
+            </li>
+            <li class="notificacion-item leida">
+                <div>
+                    Tu pago por $216.980 ha sido **Confirmado** con éxito.
+                </div>
+                <span class="notificacion-fecha">Hace 2 horas</span>
+            </li>
+            <li class="notificacion-item leida">
+                <div>
+                    ¡Nueva Promoción! Descuento del 15% en Asadores de Jardín.
+                </div>
+                <span class="notificacion-fecha">Ayer</span>
+            </li>
+        </ul>
+
+        <div class="seccion-config">
+            <h2>Preferencias de Notificación</h2>
+            <form action="/api/save-notifications" method="POST">
+                
+                <div class="preferencia-grupo">
+                    <label>
+                        <input type="checkbox" name="email_pedidos" checked> Notificaciones de Pedidos (Email)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="push_pedidos" checked> Notificaciones de Pedidos (App Móvil)
+                    </label>
+                </div>
+                
+                <div class="preferencia-grupo">
+                    <label>
+                        <input type="checkbox" name="email_pagos" checked> Confirmación de Pagos (Email)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="sms_pagos"> Alertas de Pagos (SMS)
+                    </label>
+                </div>
+                
+                <div class="preferencia-grupo">
+                    <label>
+                        <input type="checkbox" name="email_promos"> Promociones y Ofertas (Email)
+                    </label>
+                </div>
+
+                <button type="submit" class="boton-guardar">Guardar Preferencias</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
