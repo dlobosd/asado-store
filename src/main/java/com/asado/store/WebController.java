@@ -3,7 +3,6 @@ package com.asado.store;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -13,7 +12,9 @@ public class WebController {
     
     @GetMapping("/")
     public String inicio() {
-        return "redirect:/catalogo"; 
+        // CORRECCIÓN CLAVE: Devolvemos directamente el nombre de la plantilla
+        // para asegurar que Spring Boot encuentre la página de inicio.
+        return "historia8diego"; 
     }
 
     @GetMapping("/catalogo")
